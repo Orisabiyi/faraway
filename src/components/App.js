@@ -2,6 +2,7 @@ import "./App.css";
 import Form from "./Form";
 import Logo from "./Logo";
 import PackingList from "./PackingList";
+import Stats from "./Stats";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Logo />
       <Form />
       <PackingList />
+      <Stats />
     </div>
   );
 }
