@@ -1,7 +1,13 @@
-export default function PackingList() {
+import Item from "./Item";
+
+export default function PackingList({ items }) {
   return (
     <div className="list">
-      <ul></ul>
+      <ul>
+        {items.map((item) => (
+          <Item item={item} />
+        ))}
+      </ul>
     </div>
   );
 }

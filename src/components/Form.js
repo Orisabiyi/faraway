@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form() {
+export default function Form({ onItem }) {
   const [quantity, setQuantity] = useState(1);
   const [description, setDescription] = useState("");
 
@@ -10,8 +10,10 @@ export default function Form() {
     if (!description) return alert("Provide a valid desription of your item");
 
     const item = { description, quantity, packed: false, id: Date.now() };
+    onItem((items) => [...items, item]);
 
-    console.log(item);
+    setQuantity(1);
+    setDescription("");
   }
 
   return (
