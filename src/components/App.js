@@ -29,7 +29,8 @@ export default function App() {
         onToggleItem={handleToggleItem}
         onDeleteItem={handleDeleteItem}
       />
-      <Stats />
+
+      <Stats items={items} />
     </div>
   );
 }
