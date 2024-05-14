@@ -16,11 +16,19 @@ export default function App() {
     );
   }
 
+  function handleDeleteItem(id) {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form onItem={setItems} />
-      <PackingList items={items} onToggleItem={handleToggleItem} />
+      <PackingList
+        items={items}
+        onToggleItem={handleToggleItem}
+        onDeleteItem={handleDeleteItem}
+      />
       <Stats />
     </div>
   );
