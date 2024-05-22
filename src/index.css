@@ -1,241 +1,72 @@
-:root {
-  --color-lightest: #fff4e6;
-  --color-light: #ffe8cc;
-  --color-medium: #ffa94d;
-  --color-dark: #ff922b;
-}
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-& {
-  font-size: 62.5%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+:root {
+  --primary-color-blue: #458ff6;
+  --primary-color-blue-dark: #1f1534;
+  --primary-color-blue-light: #233348;
+
+  --color-white: #fff;
 }
 
-@media only screen and (max-width: 37.5em) {
-  & {
-    font-size: 31.25%;
-  }
+& {
+  font-size: 62.5%;
 }
 
 body {
-  height: 100vh;
-  color: #495057;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.8rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 2rem;
+  color: var(--primary-color-blue-light);
+  margin-right: auto;
+}
+
+.logo {
+  background-color: var(--primary-color-blue);
+  border-radius: 100%;
+  padding: 1.5rem;
+  height: 4rem;
+  width: 4rem;
+
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--color-white);
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media only screen and (max-width: 37.5em) {
-  #root {
-    width: 100vw;
-    min-height: 100vh;
-    padding: 3rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.app {
-  min-height: 66vh;
-  display: grid;
-  grid-template-columns: 34rem 44rem;
-  column-gap: 4rem;
-  align-items: start;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .app {
-    width: 85%;
-    min-height: auto;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
-    row-gap: 4rem;
-  }
-}
-
-.button {
-  background-color: var(--color-medium);
-  color: #343a40;
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: 7px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.button:hover {
-  background-color: var(--color-dark);
-}
-
-@media only screen and (max-width: 37.5em) {
-  .button {
-    font-size: 2.2rem;
-    padding: 1.3rem;
-  }
-}
-
-.sidebar ul {
+.nav__list {
   list-style: none;
+  color: var(--primary-color-blue-dark);
+
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .sidebar ul {
-    font-size: 2.5rem;
-  }
-}
-
-.sidebar li {
-  display: grid;
-  grid-template-columns: 4.8rem 1fr auto;
   align-items: center;
-  column-gap: 1.6rem;
-
-  padding: 1.2rem;
-  border-radius: 7px;
-  transition: 0.5s;
+  gap: 3rem;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .sidebar li {
-    grid-template-columns: 17% 1fr auto;
-  }
-}
-
-.selected,
-.sidebar li:hover {
-  background-color: var(--color-lightest);
-}
-
-.sidebar li img {
-  border-radius: 50%;
-  width: 100%;
-  grid-row: span 2;
-}
-
-.sidebar li h3 {
-  grid-row: 1;
-  grid-column: 2;
-}
-
-.sidebar li p {
-  grid-row: 2;
-  grid-column: 2;
-}
-
-.sidebar li .button {
-  grid-row: span 2;
-  grid-column: 3;
-}
-
-.sidebar > .button {
-  float: right;
-  margin-right: 1.2rem;
-}
-
-.green {
-  color: #66a80f;
-}
-
-.red {
-  color: #e03131;
-}
-
-form {
-  font-size: 1.6rem;
-  display: grid;
-  align-items: center;
-  gap: 1.2rem;
-
-  background-color: var(--color-lightest);
-  border-radius: 7px;
-}
-
-@media only screen and (max-width: 37.5em) {
-  form {
-    font-size: 2.5rem;
-  }
-}
-
-.form-add-friend {
-  grid-template-columns: 1fr 1.5fr;
-  margin-bottom: 1.6rem;
-  padding: 1.2rem;
-}
-
-.form-split-bill {
-  grid-template-columns: 1fr 12rem;
-  padding: 3.2rem 4rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .form-split-bill {
-    padding: 3rem;
-    grid-template-columns: 1fr 20rem;
-  }
-}
-
-label {
-  font-weight: 500;
-}
-
-label::first-letter {
-  display: inline-block;
-  margin-right: 4px;
-  font-size: 1.8rem;
-}
-
-input,
-select {
-  font-family: inherit;
-  color: inherit;
-  font-size: 1.5rem;
-  padding: 0.7rem;
-  text-align: center;
-  border: 1px solid var(--color-light);
-  border-radius: 4px;
-  transition: 0.3s;
-}
-
-input:focus,
-select:focus {
-  outline: none;
-  border: 1px solid var(--color-dark);
-}
-
-@media only screen and (max-width: 37.5em) {
-  label::first-letter {
-    font-size: 2.2rem;
-  }
-
-  input,
-  select {
-    font-size: 2.5rem;
-  }
-}
-
-form .button {
-  margin-top: 0.6rem;
-  grid-column: 2;
-}
-
-form h2 {
-  grid-column: 1 / -1;
-  font-size: 2.2rem;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-  margin-bottom: 1.6rem;
+.header {
+  padding: 5rem 10rem;
 }
