@@ -3,7 +3,7 @@ export default function Nav() {
     <nav className="nav">
       <div className="nav__logo">
         <div className="logo">T</div>
-        <h1>Trafalgar</h1>
+        <h2>Trafalgar</h2>
       </div>
 
       <ul className="nav__list">
