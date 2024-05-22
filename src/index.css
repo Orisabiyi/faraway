@@ -70,3 +70,10 @@ body {
 .header {
   padding: 5rem 10rem;
 }
+
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: unset;
+}

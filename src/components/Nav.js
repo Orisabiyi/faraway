@@ -7,11 +7,21 @@ export default function Nav() {
       </div>
 
       <ul className="nav__list">
-        <li>Home</li>
-        <li>Find a doctor</li>
-        <li>Apps</li>
-        <li>Testimonials</li>
-        <li>About us</li>
+        <li>
+          <a href="#!">Home</a>
+        </li>
+        <li>
+          <a href="#!">Find a doctor</a>
+        </li>
+        <li>
+          <a href="#!">Apps</a>
+        </li>
+        <li>
+          <a href="#!">Testimonials</a>
+        </li>
+        <li>
+          <a href="#!">About us</a>
+        </li>
       </ul>
     </nav>
   );
