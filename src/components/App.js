@@ -20,6 +20,10 @@ export default function App() {
     setItems((items) => items.filter((item) => item.id !== id));
   }
 
+  function handleClearList() {
+    setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -28,6 +32,7 @@ export default function App() {
         items={items}
         onToggleItem={handleToggleItem}
         onDeleteItem={handleDeleteItem}
+        onClearList={handleClearList}
       />
 
       <Stats items={items} />
